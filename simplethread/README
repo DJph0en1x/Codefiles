@@ -1,0 +1,4 @@
+To Run Program: 
+
+	1. Type in "make" to create the running program. 
+	2. Type in "./a.out " with the number of threads you wish to create next 	to it.  
