@@ -9,7 +9,7 @@ int *sequenceNums; //Array to store the sequence numbers.
 void *fibCreator(void *param); //Runs the fib sequence
 
 int main(int argc, char *argv[]) {//Begin Main
-	pthread_t *tid; //Thread itself
+	pthread_t *tidHolder; //Thread itself
 	pthread_attr_t attrNum; //Thread's attribute
 	
 	if (argc != 2) { //If the argument in commandline is not 2...
@@ -31,12 +31,12 @@ int main(int argc, char *argv[]) {//Begin Main
 	
 	//For every thread until the input number has been reached...
 	for(idNum = 0; idNum < numStorage; idNum++) { 
-		pthread_create(&tid[idNum], &attrNum, fibCreator, NULL); 			//Create Thread
+		pthread_create(&tidHolder[idNum], &attrNum, fibCreator, NULL); 			//Create Thread
 	}
 	
 	//For every thread until the input number has been reached...
 	for(int join = 0; join < numStorage; join++) { //Using new integer for 								error prevention
-		pthread_join(tid[join], NULL);//Each thread waits until previous						 thread has been finished
+		pthread_join(tidHolder[join], NULL);//Each thread waits until previous						 thread has been finished
 	}
 	
 	//Scanning all the sequence numbers that has been made...
