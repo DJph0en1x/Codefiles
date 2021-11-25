@@ -24,7 +24,7 @@ int main(int argc, char *argv[]) {//Begin Main
 	numStorage = atoi(argv[1]); //Retrieve the input number. 
 	sequenceNums = (int *)malloc(numStorage * sizeof(int));
 	//Create the size of the sequence array with input number
-	tid = (pthread_t *)malloc(numStorage * sizeof(pthread_t));
+	tidHolder = (pthread_t *)malloc(numStorage * sizeof(pthread_t));
 	//Create the threads with the input number
 
 	pthread_attr_init(&attrNum); //Inititate the thread attribute
